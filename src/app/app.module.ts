@@ -6,11 +6,17 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
-import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdminHomeComponent } from './pages/admin-home/admin-home.component';
 import { AdminManageProductsComponent } from './pages/admin-manage-products/admin-manage-products.component';
 import { AdminManageCategoryComponent } from './pages/admin-manage-category/admin-manage-category.component';
+import { AddProductComponent } from './pages/add-product/add-product.component';
+import { UpdateProductComponent } from './pages/update-product/update-product.component';
+import { AdminHeaderComponent } from './admin-header/admin-header.component';
+import { AdminWelcomeComponent } from './pages/admin-welcome/admin-welcome.component';
+import { UpdateCategoryComponent } from './pages/update-category/update-category.component';
+import { AddCategoryComponent } from './pages/add-category/add-category.component';
+import { UserWelcomeComponent } from './pages/user-welcome/user-welcome.component';
 
 @NgModule({
   declarations: [
@@ -18,10 +24,16 @@ import { AdminManageCategoryComponent } from './pages/admin-manage-category/admi
     HeaderComponent,
     HomeComponent,
     LoginComponent,
-    AdminLoginComponent,
     AdminHomeComponent,
     AdminManageProductsComponent,
     AdminManageCategoryComponent,
+    AddProductComponent,
+    UpdateProductComponent,
+    AdminHeaderComponent,
+    AdminWelcomeComponent,
+    UpdateCategoryComponent,
+    AddCategoryComponent,
+    UserWelcomeComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,10 @@
+
+<ng-container class="category-form">
+  <br>
+<form [formGroup]="addCategoryForm" (ngSubmit)="onSubmit()">
+  <input [(ngModel)]="category.name" formControlName="name" class="form-control form-control-lg" type="text" placeholder="Category Name">
+  <br>
+    <button  class="btn btn-outline-success" type="submit">Save Category</button>
+</form>
+
+</ng-container>

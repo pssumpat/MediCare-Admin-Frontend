@@ -1,16 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminModel } from 'src/app/models/AdminModel';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
-  selector: 'app-admin-login',
-  templateUrl: './admin-login.component.html',
-  styleUrls: ['./admin-login.component.css']
+  selector: 'app-admin-welcome',
+  templateUrl: './admin-welcome.component.html',
+  styleUrls: ['./admin-welcome.component.css']
 })
-export class AdminLoginComponent implements OnInit
-{
+export class AdminWelcomeComponent {
 
   constructor(private builder: FormBuilder,private router:Router,private adminService: AdminService)
   {
@@ -20,6 +19,7 @@ export class AdminLoginComponent implements OnInit
   adminLoginForm : FormGroup;
   submitted: boolean = false;
   passwordInvalid: boolean = false;
+  adminLoggedIn: boolean = false;
 
   ngOnInit(): void {
     this.adminLoginForm = this.builder.group({
@@ -51,7 +51,10 @@ export class AdminLoginComponent implements OnInit
       {
         console.log("true");
         this.passwordInvalid = false;
-        this.router.navigate(['adminHome'])
+        this.adminLoggedIn = true;
+        localStorage.setItem("adminLoggedIn","true");
+        localStorage.setItem('admin',JSON.stringify(this.admin));
+        this.router.navigateByUrl('adminHome')
 
       }
       else

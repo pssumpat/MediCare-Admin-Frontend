@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProductModel } from '../models/ProductModel';
 import { sample_product } from '../data';
+import { AddProductModel } from '../models/AddProductModel';
 
 @Injectable({
   providedIn: 'root'
@@ -37,4 +38,12 @@ export class ProductServiceService {
   {
     return this.http.delete(this.baseUrl+'/'+id);
   }
+
+  addProduct(product:AddProductModel):Observable<ProductModel>
+  {
+    console.log("service: "+product);
+    return this.http.post<ProductModel>(this.baseUrl,product);
+  }
+
+
 }

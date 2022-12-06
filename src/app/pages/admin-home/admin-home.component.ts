@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminModel } from 'src/app/models/AdminModel';
 import { ProductModel } from 'src/app/models/ProductModel';
 import { ProductServiceService } from 'src/app/services/product-service.service';
 
@@ -9,13 +10,14 @@ import { ProductServiceService } from 'src/app/services/product-service.service'
 })
 export class AdminHomeComponent  implements OnInit
 {
-  products: ProductModel[];
+  admin: AdminModel;
 
-  constructor(private productService: ProductServiceService){}
+  constructor(){
 
+  }
   ngOnInit(): void {
 
-    // this.products = this.productService.getAllProducts();
+    this.admin = JSON.parse(localStorage.getItem('admin') || '{}');
   }
 
 }

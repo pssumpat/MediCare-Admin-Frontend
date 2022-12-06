@@ -1,1 +1,20 @@
-<p>admin-manage-category works!</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">S. No.</th>
+      <th scope="col">Category Id</th>
+      <th scope="col">Name</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let category of categories">
+      <th scope="row">{{i}}</th>
+      <th scope="row">{{category.id}}</th>
+      <td>{{category.name}}</td>
+      <td><button (click)="deleteCategoryById(category.id)" class="btn btn-outline-danger" type="submit">Delete</button></td>
+      <td><button routerLink="updateCategory/{{category.id}}" class="btn btn-outline-success" type="submit">Update</button></td>
+    </tr>
+  </tbody>
+</table>

@@ -2,6 +2,17 @@
 <table class="table">
   <thead>
     <tr>
+      <td scope="row"></td>
+      <td scope="row"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="col">S.No.</th>
       <th scope="col">Product Id</th>
       <th scope="col">Name</th>
       <th scope="col">Discription</th>
@@ -12,15 +23,16 @@
     </tr>
   </thead>
   <tbody>
-
     <tr *ngFor="let product of products">
-      <th scope="row">{{product.id}}</th>
+      <th scope="row">{{i}}</th>
+      <td scope="row">{{product.id}}</td>
       <td>{{product.name}}</td>
       <td>{{product.description}}</td>
       <td>category here</td>
       <td>{{product.price}}</td>
       <td><button (click)="deleteProductById(product.id)" class="btn btn-outline-danger" type="submit">Delete</button></td>
-      <td><button class="btn btn-outline-success" type="submit">Update</button></td>
+      <td><button routerLink="updateProduct/{{product.id}}"  class="btn btn-outline-success" type="submit">Update</button></td>
     </tr>
   </tbody>
 </table>
+
