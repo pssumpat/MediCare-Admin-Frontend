@@ -1,0 +1,9 @@
+
+  <div *ngFor="let p of products" class="card" style="width: 18rem;">
+    <img src="https://picsum.photos/200" class="card-img-top" alt="{{p.name}}">
+    <div class="card-body">
+      <h5 class="card-title">{{p.name}}</h5>
+      <p class="card-text">{{p.description}}</p>
+      Price : {{p.price}}<a href="#" class="btn btn-primary">Add To Cart</a>
+    </div>
+  </div>
